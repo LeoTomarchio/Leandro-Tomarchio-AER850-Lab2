@@ -154,6 +154,15 @@ def predict_image(image_path):
     for label, prob in zip(class_labels, predictions[0]):
         print(f"{label}: {prob*100:.2f}%")
 
-# Example usage:
-test_image_path = "path/to/your/test/image.jpg"  # Replace with your test image path
-predict_image(test_image_path)
+def test_multiple_images(image_paths):
+    for img_path in image_paths:
+        print(f"\nTesting image: {img_path}")
+        predict_image(img_path)
+
+# Test images:
+test_images = [
+    "Data/test/crack/test_crack.jpg",
+    "Data/test/missing-head/test_missinghead.jpg",
+    "Data/test/paint-off/test_paintoff.jpg"
+]
+test_multiple_images(test_images)
