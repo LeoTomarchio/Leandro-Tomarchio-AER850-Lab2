@@ -10,10 +10,6 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 
-
-# Initialize the model
-model = Sequential()
-
 # Define constants
 IMG_WIDTH = 500
 IMG_HEIGHT = 500
