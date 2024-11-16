@@ -10,6 +10,8 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 
+tf.keras.backend.clear_session()
+
 # Define constants
 IMG_WIDTH = 500
 IMG_HEIGHT = 500
@@ -69,7 +71,8 @@ model = Sequential([
     
     # Dense layers
     layers.Dense(16, activation='relu'),
-    layers.Dropout(0.5),
+    layers.Dense(32, activation='relu'),
+    layers.Dropout(0.1),
     layers.Dense(train_generator.num_classes, activation='softmax')
 ])
 
